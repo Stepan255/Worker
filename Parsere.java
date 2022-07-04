@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Parsere {
 
-	// TODO добавить проверку на валидность данных 
 	public ArrayList<Worker> ParseCsv(String rawData){
 		ArrayList<Worker> temp = new ArrayList<>();
 		String[] tempRawData = rawData.split("\n");

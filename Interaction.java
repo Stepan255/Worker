@@ -9,7 +9,6 @@ public class Interaction {
 		this.parse = parse;
 	}
 	
-	// TODO Что делать если файл уже открыт
 	public void openFile(String name){
 		if (this.repository == null){
 			String rawData = new FileManger(name).readFile();
