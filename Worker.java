@@ -1,21 +1,54 @@
-import java.util.Calendar;
+package Worker;
 
-// import javax.xml.crypto.Data;
+import java.util.ArrayList;
 
-/**
- * Worker
- */
 public class Worker {
+	ArrayList<Worker> listWorkers;
+	private int id;
 	private int salary = 0;
-	private String firstName = null;
-	private String lastName = null;
-	private Calendar birthday = null; // todo calendar
+	private String firstName = "";
+	private String lastName = "";
 
-	public Worker(String firstNameWorker, String lastNameWorker,Calendar birthdayWorker) {
-		birthday = birthdayWorker;
+	private Worker(String firstNameWorker, String lastNameWorker, int salary, int id) {
 		firstName = firstNameWorker;
 		lastName = lastNameWorker;
-		salary = 0;
+		this.salary = salary;
+		this.id = id;
+	}
+
+	public Worker(String firstNameWorker, String lastNameWorker, int id) {
+		this(firstNameWorker, lastNameWorker, 0, id);
+	}
+
+	public Worker(String firstNameWorker, String lastNameWorker) {
+		this(firstNameWorker, lastNameWorker, new IdGenerator().getId());
+	}
+
+	public void setSalary(int salary, String password) {
+		if (password == "true password")
+			this.salary = salary;
+	}
+
+	public void setFirstName(String firstName, String password) {
+		if (password == "true password")
+			this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName, String password) {
+		if (password == "true password")
+			this.lastName = lastName;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder bilder = new StringBuilder();
+		bilder.append("(").append(id).append(",").append(firstName).append(",")
+		.append(lastName).append(",").append(salary).append(")");
+		return bilder.toString();
 	}
 
 }
