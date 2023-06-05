@@ -1,4 +1,4 @@
-package Worker;
+package Worker.Helper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +9,9 @@ import java.io.FileWriter;
 
 
 public class FileManger {
+	private final String HOME_PATH = "E:\\Stepan\\Обучение\\GeekBrains\\learning_prog\\java\\my\\Worker\\Worker";
+	private final String SEP = System.getProperty("file.separator");
+
 
 	private String path = "";
 
@@ -21,13 +24,12 @@ public class FileManger {
 	}
 
 	public FileManger(String nameFile) {
-		path = getPathFileInDir(nameFile);
+		path = HOME_PATH + SEP + nameFile;
 	}
 
 	public static String getPathFileInDir(String name) {
 		String pathProject = System.getProperty("user.dir");
-		String pathFile = pathProject.concat("\\" + name);
-		return pathFile;
+		return pathProject.concat("\\" + name);
 	}
 
 
@@ -110,6 +112,6 @@ public class FileManger {
 		}else{
 			System.out.println("Ошибка при открытии файла для записи");
 		}
-		
+
 	}
 }

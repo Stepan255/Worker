@@ -1,12 +1,12 @@
-package Worker;
+package Worker.Interface;
 
 import java.util.Scanner;
 
-public class ConsoleScaner {
+public class consoleScanner {
 
-	Scanner console = null;
+	Scanner console;
 
-	public ConsoleScaner() {
+	public consoleScanner() {
 		console = new Scanner(System.in);
 	}
 
@@ -16,15 +16,14 @@ public class ConsoleScaner {
 		while (!console.hasNextLine()){
 			console = new Scanner(System.in);
 		}
-		String textOut = console.nextLine();
-		return textOut;
+		return console.nextLine();
 	}
 
 	public int getNumber(String fieldName, String textToDisplay, int max, int min){
 		int number = -1;
 		String text = "Введите " + fieldName + ": ";
 		String str = getString(text);
-		Boolean firstTry = true;
+		boolean firstTry = true;
 		do {
 			if (!firstTry) {
 				String stringFormat = "поле %s должно находиться в диапозоне: %d < %s < %d";

@@ -1,8 +1,8 @@
 package Worker;
 
-public class Program {
+public class Main {
 
 	public static void main(String[] args) throws Exception {
-		new Starter().start();
+		new App().start();
 	}
 }

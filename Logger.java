@@ -1,5 +1,7 @@
 package Worker;
 
+import Worker.Helper.FileManger;
+
 public class Logger {
 	
 	private static Logger logger;
